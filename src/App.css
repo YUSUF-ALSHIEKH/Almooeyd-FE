@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a8c0ff 0%, #3f2b96 100%);
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.navbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.content-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h2 {
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+form > div {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #e0e0e0;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 8px 4px;
+  color: #ffffff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-bottom: 1px solid #ffffff;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1a252f;
+}
+
+p {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+form > p {
+  color: #ffffff;
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+form > p a {
+  color: #a8c0ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+form > p a:hover {
+  text-decoration: underline;
+}
