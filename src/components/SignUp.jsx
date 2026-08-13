@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
+import "../App.css"
 
 const BASE_URL = "http://localhost:5000/"
 
@@ -32,13 +33,13 @@ const SignUp = ({ setUser }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleRegister}>
-        <h2>Sign Up</h2>
+    <div className="auth-container">
+      <form onSubmit={handleRegister} className="auth-form">
+        <h2>Create Account</h2>
 
-        {error && <p>{error}</p>}
+        {error && <div className="auth-error-box">{error}</div>}
 
-        <div>
+        <div className="form-group">
           <label>Name:</label>
           <input
             type="text"
@@ -48,7 +49,7 @@ const SignUp = ({ setUser }) => {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="email"
@@ -58,7 +59,7 @@ const SignUp = ({ setUser }) => {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
@@ -68,9 +69,11 @@ const SignUp = ({ setUser }) => {
           />
         </div>
 
-        <button type="submit">Register</button>
+        <button type="submit" className="auth-submit-btn">
+          Register
+        </button>
 
-        <p>
+        <p className="auth-redirect-text">
           Already have an account? <Link to="/signin">Sign in here</Link>
         </p>
       </form>

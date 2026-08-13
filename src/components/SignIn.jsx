@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import axios from "axios"
 import "../App.css"
+
 const BASE_URL = "http://localhost:5000/"
 
 const SignIn = ({ setUser }) => {
@@ -19,11 +20,15 @@ const SignIn = ({ setUser }) => {
         email,
         password,
       })
+      console.log("Response from server:", response.data)
+
+      localStorage.setItem("token", response.data.token)
 
       const loggedInUser = response.data.user
       setUser(loggedInUser)
       navigate("/")
     } catch (err) {
+      console.error("Frontend catch error:", err)
       const errorMsg = err.response?.data?.message || err.message
 
       if (
@@ -38,13 +43,13 @@ const SignIn = ({ setUser }) => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleLogin}>
+    <div className="auth-container">
+      <form onSubmit={handleLogin} className="auth-form">
         <h2>Sign In</h2>
 
-        {error && <p>{error}</p>}
+        {error && <div className="auth-error-box">{error}</div>}
 
-        <div>
+        <div className="form-group">
           <label>Email:</label>
           <input
             type="email"
@@ -54,7 +59,7 @@ const SignIn = ({ setUser }) => {
           />
         </div>
 
-        <div>
+        <div className="form-group">
           <label>Password:</label>
           <input
             type="password"
@@ -64,10 +69,12 @@ const SignIn = ({ setUser }) => {
           />
         </div>
 
-        <button type="submit">Login</button>
+        <button type="submit" className="auth-submit-btn">
+          Login
+        </button>
 
         {error.includes("sign up") && (
-          <p>
+          <p className="auth-redirect-text">
             Don't have an account? <Link to="/signup">Sign up here</Link>
           </p>
         )}
