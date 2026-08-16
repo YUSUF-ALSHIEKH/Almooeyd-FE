@@ -363,3 +363,8 @@ body {
   margin-bottom: 1rem;
   display: block; /* Prevents inline spacing issues */
 }
+.nav-brand {
+  display: flex;
+  gap: 20px; /* Adjust this value for more or less space */
+  align-items: center;
+}

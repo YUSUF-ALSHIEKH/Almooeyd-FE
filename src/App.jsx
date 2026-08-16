@@ -7,6 +7,7 @@ import SignUp from "./components/SignUp"
 import Navbar from "./components/Navbar"
 import AddProduct from "./components/AddProduct"
 import ProductDetails from "./components/ProductDetails"
+import Productslist from "./components/Productslist"
 function App() {
   const [user, setUser] = useState(null)
   const location = useLocation()
@@ -44,6 +45,7 @@ function App() {
           <Route path="/signin" element={<SignIn setUser={setUser} />} />
           <Route path="/signup" element={<SignUp setUser={setUser} />} />
           <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/products" element={<Productslist user={user} />} />
         </Routes>
       </div>
     </div>

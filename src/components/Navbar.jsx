@@ -20,6 +20,8 @@ const Navbar = ({ user, setUser }) => {
     <nav className="navbar">
       <div className="nav-brand">
         <Link to="/">Home</Link>
+
+        <Link to="/products">Products</Link>
       </div>
 
       <div className="nav-links">
